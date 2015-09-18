@@ -21,4 +21,4 @@
 > topic ask_name
 
   + *
-  - Hi <star>
+  - <set name=<star>>Hi <star>

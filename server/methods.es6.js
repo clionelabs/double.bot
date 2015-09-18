@@ -8,8 +8,11 @@ Meteor.methods({
 
     let output = Bot.talk(conversationId, input);
     conversation.addMessage(input, false);
-    conversation.addMessage(output, true);
-    conversation.updateVars(Bot.userVars(conversationId));
+
+    Meteor.setTimeout(() => {
+      conversation.addMessage(output, true);
+      conversation.updateVars(Bot.userVars(conversationId));
+    }, 1000);
 
     return output;
   },
