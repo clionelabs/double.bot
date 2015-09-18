@@ -1,0 +1,98 @@
+
+<template name="conversation">
+  <div class="ui container">
+    <a href="/">
+      <h2 class="ui top attached header inverted">
+        <img src="/images/logo.png"/>
+        Double - Date Planner
+      </h2>
+    </a>
+    <div class="ui attached segment">
+      <div class="ui grid container">
+        <div class="five wide column">
+          {{> profile}}
+        </div>
+        <div class="eight wide column">
+          {{> dialog}}
+        </div>
+        <div class="three wide column">
+          {{> captures}}
+        </div>
+      </div>
+    </div>
+    <div class="ui center aligned bottom attached header inverted">
+      powered by <a href="double.co" target="_blank">double.co</a>
+    </div>
+  </div>
+</template>
+
+<template name="profile">
+  <div class="ui card">
+    <a class="image" href="#">
+      <img src="/images/avatar-bot-large.jpg">
+    </a>
+    <div class="content">
+      <a class="header" href="#">David</a>
+      <div class="meta">
+        <a>10 minutes experiences in date planning</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="dialogMessage">
+  {{> Template.dynamic template=messageTemplateName data=messageTemplateData}}
+</template>
+
+<template name="dialogMessageBot">
+  <div class="event">
+    <div class="label">
+      <img class="ui avatar image" src="/images/avatar-bot-small.jpg">
+    </div>
+    <div class="content">
+      {{content}}
+    </div>
+  </div>
+</template>
+
+<template name="dialogMessageUser">
+  <div class="event">
+    <div class="label">
+      <img class="ui avatar image" src="/images/avatar-small.png"/>
+    </div>
+    <div class="content">
+      {{content}}
+    </div>
+  </div>
+</template>
+
+<template name="dialogMessageInput">
+  <form id="message-form" class="ui form">
+    <div class="ui fluid action input">
+      <input id="message-form-content" type="text" placeholder="Message...">
+      <button id="message-form-submit" type="submit" class="ui button">Send</button>
+    </div>
+  </form>
+</template>
+
+<template name="dialog">
+  <div id="messages-container" class="ui middle aligned feed" style="height: 500px; overflow-y:scroll">
+    {{#each messages}}
+     {{> dialogMessage}}
+    {{/each}}
+  </div>
+  <div>
+    {{> dialogMessageInput messageInputData}}
+  </div>
+</template>
+
+<template name="captures">
+  <div class="ui celled list">
+    {{#each vars}}
+      <div class="item">
+        {{key}} - {{value}}
+      </div>
+    {{/each}}
+  </div>
+</template>
+

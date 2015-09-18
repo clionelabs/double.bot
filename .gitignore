@@ -1,0 +1,5 @@
+#meteor local build
+.meteor/local
+
+#OS X system file
+.DS_Store
