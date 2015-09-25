@@ -31,6 +31,6 @@ Bot = {
   },
 
   _botDirectory() {
-    return process.env.PWD + '/private/bot';
+    return process.env.PWD + '/private/bots/dateplanner';
   }
 }

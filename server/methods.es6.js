@@ -12,7 +12,7 @@ Meteor.methods({
     Meteor.setTimeout(() => {
       conversation.addMessage(output, true);
       conversation.updateVars(Bot.userVars(conversationId));
-    }, 1000);
+    }, 500);
 
     return output;
   },
