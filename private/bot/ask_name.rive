@@ -1,0 +1,54 @@
+// determine whether an answer looks like a name
+> object ask_name_parse_star javascript
+  if (args.length === 1) {
+    return "{@hellodouble name " + args[0] + "}" // redirect to name rule
+  } else if (args.length <= 3) {
+    return "{@hellodouble confirming " + args[0] + "}" // redirect to confiming rule
+  } else {
+    return "{@hellodouble unclear}"; // redirect to unclear rule
+  }
+< object
+
+> topic ask_name includes side_track
+
+  + hellodouble start
+  - May I have your name please?
+
+  + hellodouble confirming *
+  - May I call you <star1>? <set confirming_name=<star1>> {topic=ask_name_confirm}
+
+  + hellodouble name *
+  - Thank you <star1> <set name=<star1>>. So I would like to gather some more information from you first. {topic=ask_date_type} {@hellodouble start}
+
+  + hellodouble unclear
+  - I'm not sure I understand what you mean. Do you have a first name that I can call you?
+
+  + name is *
+  @ hellodouble name <star1>
+
+  + [*] call me *
+  @ name is <star1>
+
+  + * name is *
+  @ name is <star2>
+
+  + [*] (surname|firstname|first name|family name) is *
+  @ name is <star1>
+
+  + [*] (lastname|last name) is *
+  - May I also have your firstname please?
+
+  + *
+  - <call>ask_name_parse_star <star1></call>
+
+< topic
+
+> topic ask_name_confirm includes yes_no yes_no_no_match
+
+  + yes
+  - {topic=ask_name} {@hellodouble name <get confirming_name>}
+
+  + no
+  - Sorry, maybe I misunderstood you. What should I call you again? {topic=ask_name}
+
+< topic

@@ -1,0 +1,19 @@
+> topic ask_indoor includes side_track general_no_match
+
+  // internal rules
+  + hellodouble start
+  - Would you like to do outdoor activities, or want to stay indoor? or doesn't matter?
+
+  + hellodouble done
+  - {topic=suggestions} {@hellodouble start}
+
+  + [*] (outdoor|outside) [*]
+  - I like outdoor activities too. Make me feel energetic! {@hellodouble done}
+
+  + [*] (indoor|inside) [*]
+  - Alright... staying inside... {@hellodouble done}
+
+  + [*] (matter|both|not sure|either|any|anything|not mind) [*]
+  - Noted. {@hellodouble done}
+
+< topic

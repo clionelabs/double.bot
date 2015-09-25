@@ -1,0 +1,14 @@
+> object suggestions_plan javascript
+  return "Cool. I have got everything I need. Let me think about it and get back to you with a wonderful plan!"
+< object
+
+> topic suggestions includes yes_no side_track
+
+  + hellodouble start
+  - <call>suggestions_plan</call>
+
+  + *
+  - please wait...
+  - um... I'm doing some research now...
+
+< topic

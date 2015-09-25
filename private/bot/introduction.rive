@@ -1,0 +1,15 @@
+> topic introduction includes yes_no yes_no_no_match side_track
+
+  + hi
+  - Hi, my name is David. I'm trained to organize date for you and your partner. Would you like to try me out?
+
+  + yes
+  - Awesome. Let's get started! {topic=ask_name} {@hellodouble start}
+
+  + no
+  - Too bad. But I'm here whenever you are ready. Just let me know!
+
+  + [i] [would] love to [*]
+  @ yes
+
+< topic

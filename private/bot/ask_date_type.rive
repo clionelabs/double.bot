@@ -1,0 +1,54 @@
+> topic ask_date_type includes side_track general_no_match
+
+  // internal rules
+  + hellodouble start
+  - What types of date you wanna do?<br/>
+  ^ <ul>
+  ^   <li>First Date</li>
+  ^   <li>Second Date</li>
+  ^   <li>Anniversary Date</li>
+  ^   <li>Birthday Date</li>
+  ^   <li>Casual Date</li>
+  ^   <li>Double Date</li>
+  ^   <li>Proposal Date</li>
+  ^   <li>Special Occation Date</li>
+  ^ </ul>
+
+  + hellodouble done
+  - {topic=ask_duration} {@hellodouble start}
+
+  // normal rules
+
+  + [*] first [*]
+  - <set date_type=first>
+  ^ A first date? nice. you must be very excited! {@hellodouble done}
+
+  + [*] second [*]
+  - <set date_type=second>
+  ^ I see. The second date is usually very important. {@hellodouble done}
+
+  + [*] anniversary [*]
+  - <set date_type=anniversary>
+  ^ Congratulations on your anniversary. {@hellodouble done}
+
+  + [*] birthday [*]
+  - <set date_type=birthday>
+  ^ I see. You definitely want to give your partner a wonderful birthday!{@hellodouble done}
+
+  + [*] casual [*]
+  - <set date_type=casual>
+  ^ A casual date... let me note it down. {@hellodouble done}
+
+  + [*] double [*]
+  - <set date_type=double>
+  ^ A double date... let me note it down. {@hellodouble done}
+
+  + [*] (proposal|propose) [*]
+  - <set date_type=proposal>
+  ^ Wow! you must be very excited now! {@hellodouble done}
+
+  + [*] special [*]
+  - <set date_type=special_occasion>
+  ^ Special occation... let me note it down. {@hellodouble done}
+
+< topic

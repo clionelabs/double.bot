@@ -1,0 +1,15 @@
+> object side_track_restart javascript
+  // TODO: clear userVars here
+  var uid = rs.currentUser();
+  rs.setUservar(uid, "topic", "ask_name");
+< object
+
+> topic side_track
+
+  + hellodouble restart
+  - <call>side_track_restart</call> Alright, let's do it again! May I have your name again please?
+
+  + restart
+  @ hellodouble restart
+
+< topic

@@ -1,0 +1,84 @@
+> topic yes_no
+
+  // yes
+  + [*] of course [*]
+  @ yes
+
+  + [*] sure [*]
+  @ yes
+
+  + [*] absolutely [*]
+  @ yes
+
+  + [*] definitely [*]
+  @ yes
+
+  + [*] exactly [*]
+  @ yes
+
+  + [*] okay [*]
+  @ yes
+
+  + [*] i guess so [*]
+  @ yes
+
+  + [*] indeed [*]
+  @ yes
+
+  + [*] please do [*]
+  @ yes
+
+  + [*] correct [*]
+  @ yes
+
+  + [*] right [*]
+  @ yes
+
+  + [*] true [*]
+  @ yes
+
+  + [*] no problem [*]
+  @ yes
+
+  + [*] alright [*]
+  @ yes
+
+  + [*] yeah [*]
+  @ yes
+
+  + [*] exactly [*]
+  @ yes
+
+  + [*] i guess so [*]
+  @ yes
+
+  + [*] indeed [*]
+  @ yes
+
+  + [*] why not [*]
+  @ yes
+
+  // nope
+  + [*] of course not [*]
+  @ no
+
+  + [*] not really [*]
+  @ no
+
+  + [*] no way [*]
+  @ no
+
+  + [*] not at all [*]
+  @ no
+
+  + [*] no [*]
+  @ no
+
+< topic
+
+> topic yes_no_no_match
+
+  + *
+  - Sorry, I'm not sure whether that's a yes or no. Could you be more explicit?
+
+< topic

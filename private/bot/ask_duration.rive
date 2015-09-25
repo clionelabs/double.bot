@@ -1,0 +1,12 @@
+> topic ask_duration includes side_track general_no_match
+
+  // internal rules
+  + hellodouble start
+  - How long are you guys expecting to spend on the date? For example,
+  ^ would you like to plan activities for the whole day, half a day, or just a meal time?
+
+  // normal rules
+  + [*] (whole|full|half|day|hours|morning|lunch|dinner|afternoon|evening|meal|weekend) [*]
+  - I see. I'll keep that in mind. {topic=ask_indoor} {@hellodouble start}
+
+< topic
